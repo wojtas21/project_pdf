@@ -13,7 +13,7 @@ def validate_files(files):
     valid_files.append(file)
 
     if valid_files:
-        print(f"Znaleziono poprawne pliki: {valid_files}")  # Debugowanie: pokazujemy poprawne pliki
+        print(f"Znaleziono poprawne pliki: {valid_files}")  
     else:
         print("Brak poprawnych plików do scalenia.")
     return valid_files
@@ -22,14 +22,14 @@ def validate_files(files):
 def merge_pdfs(files):
     valid_files = validate_files(files)
     if not valid_files:
-        print("Brak poprawnych plików do scalenia.")  #la
+        print("Brak poprawnych plików do scalenia.")  
         return
 
     merger = PdfWriter()
-    print("Rozpoczynam scalanie plików...")  #
+    print("Rozpoczynam scalanie plików...")  
 
     for file in valid_files:
-        print(f"Dodaję plik do scalenia: {file}")  #
+        print(f"Dodaję plik do scalenia: {file}")  
         merger.append(file)
     
     output_folder = input("Enter path, where your file will be saved.")
@@ -39,7 +39,7 @@ def merge_pdfs(files):
         return
 
     output_filename = os.path.join(output_folder, "merged_output.pdf")
-    print(f"Zapisuję plik do: {output_filename}")  #
+    print(f"Zapisuję plik do: {output_filename}")  
     merger.write(output_filename)
     print(f"File has been successfully saved in {output_folder}, as {output_filename}")
 
